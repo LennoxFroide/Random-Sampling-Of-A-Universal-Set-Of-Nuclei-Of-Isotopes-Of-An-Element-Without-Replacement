@@ -89,7 +89,7 @@ class Statistics:
     """######################### END OF SECTION TO COMPUTE MODAL NODE PER LEVEL ###############################"""
 
 
-    """######################### SECTION TO COMPUTE MODAL NODE PER LEVEL ###############################"""
+    """######################### SECTION TO COMPUTE MODAL NODE FOR ENTIRE ISOTOPE TREE ###############################"""
     def modalNodeAcrossTree(self,modalNodePerLevelMap):
         isotopeCounts = dict()
         modalNode = None
@@ -104,7 +104,7 @@ class Statistics:
             if isotopeCounts[modalNodeForLevel] >= isotopeCounts[modalNode]:
                 modalNode = modalNodeForLevel
         return modalNode  
-
+    """######################### END OF SECTION TO COMPUTE MODAL NODE FOR ENTIRE ISOTOPE TREE ###############################"""
 
     """######################### SECTION TO COMPUTE INSTANTENEOUS ISOTOPE DISTRIBUTION NODE PER LEVEL ###############################"""
     def computeInstantaneousIsotopeDistributions(self,root):
