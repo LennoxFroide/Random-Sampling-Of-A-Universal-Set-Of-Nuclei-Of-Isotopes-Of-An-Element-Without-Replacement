@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 class Statistics:
     def __init__(self):
@@ -131,4 +132,20 @@ class Statistics:
 
     """######################### END OF SECTION TO COMPUTE INSTANTENEOUS ISOTOPE DISTRIBUTION NODE PER LEVEL ###############################"""
 
+
+    """######################### SECTION TO PLOT RANDOM PROCESSES ###############################"""
+    def randomProcessPlotter(self,instantaneousMap):
+        array = []
+        for isotopeId, instantaneousCounts in instantaneousMap.items():
+            listDistribution = [isotopeId] + instantaneousCounts
+            array.append(listDistribution)
+        npArray = np.array(array)
+        df = pd.DataFrame(instantaneousMap,columns = list(instantaneousMap.keys()))
+        df = df.T
+        df = df.cumsum()
+        plt.figure()
+        df.plot()
+
+
+    """######################### END OF SECTION TO PLOT RANDOM PROCESSES ###############################"""
     
