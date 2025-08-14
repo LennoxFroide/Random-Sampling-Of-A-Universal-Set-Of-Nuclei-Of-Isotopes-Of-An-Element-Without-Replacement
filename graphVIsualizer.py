@@ -118,32 +118,86 @@ class GraphVisualizer:
         mapper[nodeId] = node
     
     def getListOfParentNodes(self):
+        """Helper function to get the ids of all the parent nodes of the
+        isotope tree."""
         parentChildMap = self.parentChildMatcher
         # Sorting the map according to the level of parent nodes in the tree
         sortedParentChildMap = dict(sorted(parentChildMap.items(), key=lambda item: item[1][0]))
-        return sortedParentChildMap.keys()
+        return list(sortedParentChildMap.keys())
     
-    def buildDigraph(self,parentsList):
-        for parentId in parentsList:
-            parentNode = self.myGraph.node(str(parentId),str(parentId))
+    def buildNodeIdDigraph(self,parentsList):
+        """Helper function to plot the isotope tree with the node ids in each node."""
+        for index in range(1,len(parentsList)):
+            parentId = parentsList[index]
+            self.myGraph.node(str(parentId),str(parentId))
             childrenList = self.parentChildMatcher[parentId]
-            if len(childrenList):
-                firstChildNode = self.myGraph.node(str(childrenList[0]),str(childrenList[0]))
-                if len(childrenList) > 1:
-                    secondChildNode = self.myGraph.node(str(childrenList[1]),str(childrenList[1]))
+            if len(childrenList) > 1:
+                firstChildId = str(childrenList[1])
+                self.myGraph.node(firstChildId,firstChildId)
+                if len(childrenList) > 2:
+                    secondChildId = str(childrenList[2])
+                    self.myGraph.node(secondChildId,secondChildId)
                 else:
-                    secondChildNode = self.myGraph.node(str(self.generateNodeId),"")
+                    secondChildId = str(self.generateNodeId)
+                    self.myGraph.node(secondChildId,"")
             else:
-                firstChildNode = self.myGraph.node(str(self.generateNodeId),"")
-                secondChildNode = self.myGraph.node(str(self.generateNodeId),"")
+                firstChildId = str(self.generateNodeId)
+                self.myGraph.node(firstChildId,"")
+                secondChildId = str(self.generateNodeId)
+                self.myGraph.node(secondChildId,"")
             # Adding edges
-            self.myGraph.edge(parentNode,firstChildNode)
-            self.myGraph.edge(parentNode,secondChildNode)
+            self.myGraph.edge(str(parentId),firstChildId)
+            self.myGraph.edge(str(parentId),secondChildId)
 
         # Displaying our digraph
-        self.myGraph.render('SubsetsPlot',view=True)
+        self.myGraph.render('NodalIds',view=True)
+    
+    def buildIsotopeDistributionDigraph(self,parentsList):
+        # TODO: Change hard coded node-token generation to be dynamic.
+        """Helper function to plot the isotope tree with the distribution of
+        each isotope shown in each node."""
+        for index in range(1,len(parentsList)):
+            parentId = parentsList[index]
+            parentNode = self.nodeIDNodeMatcher[parentId]
+            parentNodeToken = self.getNodalToken(parentNode)
+            self.myGraph.node(str(parentId),parentNodeToken[0] + "\n" + parentNodeToken[1] + "\n" + parentNodeToken[2])
+            childrenList = self.parentChildMatcher[parentId]
+            if len(childrenList) > 1:
+                firstChildId = str(childrenList[1])
+                firstChildNode = self.nodeIDNodeMatcher[childrenList[1]]
+                firstNodeToken = self.getNodalToken(firstChildNode)
+                self.myGraph.node(firstChildId,firstNodeToken[0] + "\n" + firstNodeToken[1] + "\n" + firstNodeToken[2])
+                if len(childrenList) > 2:
+                    secondChildId = str(childrenList[2])
+                    secondChildNode = self.nodeIDNodeMatcher[childrenList[2]]
+                    secondNodalToken = self.getNodalToken(secondChildNode)
+                    self.myGraph.node(secondChildId,secondNodalToken[0] + "\n" + secondNodalToken[1] + "\n" + secondNodalToken[2])
+                else:
+                    secondChildId = str(self.generateNodeId)
+                    self.myGraph.node(secondChildId,"")
+            else:
+                firstChildId = str(self.generateNodeId)
+                self.myGraph.node(firstChildId,"")
+                secondChildId = str(self.generateNodeId)
+                self.myGraph.node(secondChildId,"")
+            # Adding edges
+            self.myGraph.edge(str(parentId),firstChildId)
+            self.myGraph.edge(str(parentId),secondChildId)
+
+        # Displaying our digraph
+        self.myGraph.render('IsotopeDistribution',view=True)
+
+    def getNodalToken(self,node):
+        """Helper function that takes the isotope distribution data and converts
+        them into strings to allow for easier isotope tree plot generation."""
+        isotopeCounts = node.countsIsotopes
+        nodalTokens = list()
+        for key, value in isotopeCounts.items():
+            nodalTokens.append(str(key) + ":" + str(int(value)))
+        return nodalTokens
+
     
 #-------------Executable--------------------#
 array = ['A','B','C','D','E','F','G','H','I','J']
 graph = GraphVisualizer()
-graph.generateThreeNodalTree(array)
+# graph.generateThreeNodalTree(array)
