@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import copy
 
 class Statistics:
     def __init__(self):
@@ -136,16 +137,91 @@ class Statistics:
     """######################### SECTION TO PLOT RANDOM PROCESSES ###############################"""
     def randomProcessPlotter(self,instantaneousMap):
         array = []
+        counter = 1
         for isotopeId, instantaneousCounts in instantaneousMap.items():
             listDistribution = [isotopeId] + instantaneousCounts
+            plt.figure(counter)
+            plt.plot(listDistribution[1:])
             array.append(listDistribution)
+            counter += 1
         npArray = np.array(array)
+
+        """
         df = pd.DataFrame(instantaneousMap,columns = list(instantaneousMap.keys()))
         df = df.T
-        df = df.cumsum()
-        plt.figure()
-        df.plot()
-
+        # dataToPlot = df[1:2]
+        dataToPlot = df
+        dataToPlot = dataToPlot.cumsum()
+        # plt.figure(1)
+        dataToPlot.plot()
+        # plt.plot(dataToPlot)
+        plt.show()
+        """
 
     """######################### END OF SECTION TO PLOT RANDOM PROCESSES ###############################"""
     
+    """######################### SECTION TO GET THE DISTRB. OF PARTICLES ALONG A BRANCH ###############################"""
+    def meanLevelIsotopeCounts(self,instantaneousMap):
+        pass
+
+    def getParticleDistributionAlongPath(self,root,isotopeId):
+        listParticlesPerPath = {}
+        return self.getActualDistribution(root,listParticlesPerPath,isotopeId,[])
+    
+    def getActualDistribution(self,node,map,isotopeId,nodesList):
+        if node.left is None and node.right is None:
+            nodesList.append(node.countsIsotopes[isotopeId])
+            completePathParticlesList = copy.deepcopy(nodesList)
+            map[node.nodeId] = completePathParticlesList
+            leafNodesCounts = nodesList.pop()
+            return map
+        nodesList.append(node.countsIsotopes[isotopeId])
+        self.getActualDistribution(node.left,map,isotopeId,copy.deepcopy(nodesList))
+        self.getActualDistribution(node.right,map,isotopeId,copy.deepcopy(nodesList))
+        return map
+
+
+    """######################### END OF SECTION TO GET THE DISTRB. OF PARTICLES ALONG A BRANCH ###############################"""
+
+
+    """######################### SECTION TO GET THE PROBABILITIES OF ISOTOPES ACROSS ISOTOPE TREE ###############################"""
+    def isotopeProbabilities(self,root,isotopeId):
+        current = root
+        listSubsetCounts = list()
+        isotopeParticlesSubsetCounts = self.getSubsetCounts(current,listSubsetCounts,isotopeId)
+        return self.calculateProbabilities(isotopeParticlesSubsetCounts)
+    
+    def getSubsetCounts(self,node,array,isotopeId):
+        if node is None:
+            return
+        
+        # Using pre-order traversal
+        isotopeDistributions = node.countsIsotopes
+        totalNumberOfParticles = 0
+
+        currentSubsetData = []
+        for currentIsotopeId, particleCount in isotopeDistributions.items():
+            if currentIsotopeId == 'parentId' or currentIsotopeId == 'myId':
+                continue
+            if currentIsotopeId == isotopeId:
+                currentSubsetData.append(particleCount)
+            totalNumberOfParticles += particleCount
+        currentSubsetData.append(totalNumberOfParticles)
+
+        array.append(currentSubsetData)
+        self.getSubsetCounts(node.left,array,isotopeId)
+        self.getSubsetCounts(node.right,array,isotopeId)
+
+        return array
+    
+    def calculateProbabilities(self,array):
+        probabilities = list()
+        for data in array:
+            isotopeParticles, totalParticles = data
+            ratio = (isotopeParticles / totalParticles) * 100
+            probabilities.append(ratio)
+        return probabilities
+            
+        
+
+    """######################### END OF SECTION TO GET THE PROBABILITIES OF ISOTOPES ACROSS ISOTOPE TREE ###############################"""
