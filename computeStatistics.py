@@ -225,3 +225,20 @@ class Statistics:
         
 
     """######################### END OF SECTION TO GET THE PROBABILITIES OF ISOTOPES ACROSS ISOTOPE TREE ###############################"""
+
+    def mean(self,array):
+        numberOfSubsets = len(array)
+        total = sum(array)
+        return (total / numberOfSubsets)
+    
+    def variance(self,array):
+        mean = self.mean(array)
+        numberOfSubsets = len(array)
+        difference = 0
+        for randomValue in array:
+            difference += (randomValue - mean)**2
+        return (difference / numberOfSubsets)
+    
+    def generateBernoulli(self,numOfRepeatedTrials,meanExpectation,epochs):
+        return np.random.binomial(numOfRepeatedTrials,meanExpectation,epochs)
+
