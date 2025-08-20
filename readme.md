@@ -15,7 +15,9 @@
     Since U is the universal set Hp' is in U, Hp'' is  U, and Hp''' is in U. Now we can represent the universal set U
     as:
 </p>
-<p>Insert a Venn diagram here showing the universal set as a circle with the 3 isotope symbols in it.</p>
+
+<img src="UniversalSetVennDiagram.jpg", alt="The universal set of isotopes of element Hp">
+
 <p>Now, we want to make n random picks of paraticles from U, where each pick refers to drawing a particle from the current
     set without replacement and n << m, where m represents the cardinality of the current set (for the first random pick m is
     equal to the cardinality of the universal set U). The three isotopes have varying distributions withing a set which means that
@@ -26,6 +28,7 @@
     ) and we can now represent our sets as:
 </p>
 <p>Insert a Venn diagram showing the partitions Y and U' </p>
+<img src="YandUprimeVennDiagram.jpg", alt="Y and Uprime partitioning of U">
 <p>Next, we will make n' and n'' additional random picks from our two subsets U' and Y respectively such that (n')/(m - n) = n''/(n) = m / n . We will place
     all n' selected particles from subset U' and n'' selected particles from subset Y, into new subsets U'' and Y' respectively.Notice that subsets
     U', U'', Y, and Y' form partitions of powerset U. Then we will recompute the distributions of Hp', Hp'', and Hp''' in all sets U', U'',
