@@ -14,7 +14,9 @@
 <p>Consider a universal set U of all the particles of an element Hp. The element has 3 isotopes, Hp', Hp'',and Hp'''.
     Since U is the universal set Hp' is in U, Hp'' is  U, and Hp''' is in U. Now we can represent the universal set U
     as:
+    <p>
     <img src="UniversalSetVennDiagram.jpg", alt="The universal set of isotopes of element Hp">
+    </p>
 </p>
 <p>Now, we want to make n random picks of paraticles from U, where each pick refers to drawing a particle from the current
     set without replacement and n << m, where m represents the cardinality of the current set (for the first random pick m is
@@ -25,7 +27,7 @@
     of the <b>power set</b> U since no particle can be in both Y and U' (we're assuming that our particles do not have a wavelength, not quantum :)
     ) and we can now represent our sets as:
 </p>
-<p>Insert a Venn diagram showing the partitions Y and U' </p>
+<p> </p>
 <img src="YandUprimeVennDiagram.jpg", alt="Y and Uprime partitioning of U">
 <p>Next, we will make n' and n'' additional random picks from our two subsets U' and Y respectively such that (n')/(m - n) = n''/(n) = m / n . We will place
     all n' selected particles from subset U' and n'' selected particles from subset Y, into new subsets U'' and Y' respectively.Notice that subsets
