@@ -14,10 +14,8 @@
 <p>Consider a universal set U of all the particles of an element Hp. The element has 3 isotopes, Hp', Hp'',and Hp'''.
     Since U is the universal set Hp' is in U, Hp'' is  U, and Hp''' is in U. Now we can represent the universal set U
     as:
+    <img src="UniversalSetVennDiagram.jpg", alt="The universal set of isotopes of element Hp">
 </p>
-
-<img src="UniversalSetVennDiagram.jpg", alt="The universal set of isotopes of element Hp">
-
 <p>Now, we want to make n random picks of paraticles from U, where each pick refers to drawing a particle from the current
     set without replacement and n << m, where m represents the cardinality of the current set (for the first random pick m is
     equal to the cardinality of the universal set U). The three isotopes have varying distributions withing a set which means that
