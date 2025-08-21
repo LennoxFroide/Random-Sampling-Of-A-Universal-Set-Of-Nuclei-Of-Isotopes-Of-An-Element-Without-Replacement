@@ -29,7 +29,7 @@
 </p>
 <p> </p>
 <img src="YandUprimeVennDiagram.jpg", alt="Y and Uprime partitioning of U">
-<p>Next, we will make n' and n'' additional random picks from our two subsets U' and Y respectively such that: <p> </p> <p> (n')/(m - n) = n''/(n) = m / n </p> . We will place
+<p>Next, we will make n' and n'' additional random picks from our two subsets U' and Y respectively such that: <p> </p> <p> (n')/(m - n) = n''/(n) = n / m </p> . We will place
     all n' selected particles from subset U' and n'' selected particles from subset Y, into new subsets U'' and Y' respectively.Notice that subsets
     U', U'', Y, and Y' form partitions of powerset U. Then we will recompute the distributions of Hp', Hp'', and Hp''' in all sets U', U'',
     Y, and Y'. The next step will be to make n''' random picks from subsets U'' and Y' such that:<p></p>
