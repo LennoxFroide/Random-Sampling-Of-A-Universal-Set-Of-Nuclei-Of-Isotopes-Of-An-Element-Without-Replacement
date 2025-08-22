@@ -175,7 +175,7 @@
     the next figures show the likelihoods of drawing the particles of any isotope across all of the partitions generated from
     the sampling process.
     <div class="Isotope1InstantaneousProbability">
-        <img src="50 Epochs\IsotopeInstantaneousProbabilities\Isotope1InstataneousProbababilities.png"
+        <img src="Isotope1InstataneousProbababilities.png"
         alt="Instantaneous probabilities for Isotope 1"
         width="100%">
         <figcaption>Figure 12: Probabilities of Randomly Selecting the Particles of Isotope 1 Across the Simulation</figcaption>
