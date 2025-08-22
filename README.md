@@ -60,7 +60,7 @@
     in each subset/partition.
 <div class="row">
     <div class="column">
-    <img src="50 Epochs\IsotopeDistribution50Epochs.jpg" alt="Isotopes per partition." width="1500" height="500">
+    <img src="img\IsotopeDistribution50Epochs.jpg" alt="Isotopes per partition." width="1500" height="500">
     </div>
     <figcaption>Figure 1: Partitions Produced for a Simulation of 50 Sampling Epochs.</figcaption>
     <div class="column">
@@ -89,7 +89,7 @@
         <figcaption> Figure 3: Number of Particles of Isotope One Traversing the LeftMost Path in the Left Subtree</figcaption>
     </div>
     <div class = "isotopePath">
-    <img src="50 Epochs\RightSubtreePaths\Isotope1Path17Epochs50.png" 
+    <img src="img\RightSubtreePaths\Isotope1Path17Epochs50.png" 
     alt="Left-most path in the left subtree"
     style="width: 100%">
     <figcaption> Figure 4: Number of Particles of Isotope One Traversing the LeftMost Path in the Right Subtree</figcaption>
@@ -104,13 +104,13 @@
     <p></p>
     <p>Figure 5 and Figure 6 contain similar plots for Isotope 2's particles.</p>
     <div class="isotope2Path">
-        <img src="50 Epochs\LeftSubtreePaths\Isotope2Path1Epochs50.png"
+        <img src="img\LeftSubtreePaths\Isotope2Path1Epochs50.png"
         alt="Isotope 2 particles leftmost path of left subtree"
         width="100%">
         <figcaption>Figure 5: Number of Particles of Isotope 2 Traversing the LeftMost Path in the Left Subtree</figcaption>
     </div>
     <div class="isotope2Path">
-        <img src="50 Epochs\RightSubtreePaths\Isotope2Path17Epochs50.png"
+        <img src="img\RightSubtreePaths\Isotope2Path17Epochs50.png"
         alt="Isotope 2 particles leftmost path of left subtree"
         width="100%">
     </div>
@@ -119,13 +119,13 @@
     <p></p>
     <p>Figure 7 and Figure 8 contain similar plots for Isotope 3's particles.</p>
     <div class="isotope2Path">
-        <img src="50 Epochs\LeftSubtreePaths\Isotope3Path1Epochs50.png"
+        <img src="img\LeftSubtreePaths\Isotope3Path1Epochs50.png"
         alt="Isotope 2 particles leftmost path of left subtree"
         width="100%">
         <figcaption>Figure 7: Number of Particles of Isotope 3 Traversing the LeftMost Path in the Left Subtree</figcaption>
     </div>
     <div class="isotope2Path">
-        <img src="50 Epochs\RightSubtreePaths\Isotope3Path17Epochs50.png"
+        <img src="img\RightSubtreePaths\Isotope3Path17Epochs50.png"
         alt="Isotope 2 particles leftmost path of left subtree"
         width="100%">
         <figcaption>Figure 8: Number of Particles of Isotope 3 Traversing the LeftMost Path in the Right Subtree</figcaption>
@@ -143,19 +143,19 @@
     counts are plotted for the entire length of the simulation we obtain realizations of random processes that resemble the 
     Bernoulli Random Process. We show the plots of the obtained random processes in the following figures.
     <div class="randomProcess1">
-        <img src="50 Epochs\IsotopeRandomProcesses\Isotope1RandomProcess50.png",
+        <img src="img\IsotopeRandomProcesses\Isotope1RandomProcess50.png",
         alt="Realization for Isotope 1 Particles"
         width="100%">
         <figcaption>Figure 9: The Instantaneous Fluctuations of the Counts of Particles for Isotope 1 Across the Simulation</figcaption>
     </div>
     <div class="randomProcess2">
-        <img src="50 Epochs\IsotopeRandomProcesses\Isotope2RandomProcess50.png",
+        <img src="img\IsotopeRandomProcesses\Isotope2RandomProcess50.png",
         alt="Realization for Isotope 1 Particles"
         width="100%">
         <figcaption>Figure 10: The Instantaneous Fluctuations of the Counts of Particles for Isotope 2 Across the Simulation</figcaption>
     </div>
     <div class="randomProcess2">
-        <img src="50 Epochs\IsotopeRandomProcesses\Isotope3RandomProcess50.png",
+        <img src="img\IsotopeRandomProcesses\Isotope3RandomProcess50.png",
         alt="Realization for Isotope 1 Particles"
         width="100%">
         <figcaption>Figure 11: The Instantaneous Fluctuations of the Counts of Particles for Isotope 3 Across the Simulation</figcaption>
@@ -181,13 +181,13 @@
         <figcaption>Figure 12: Probabilities of Randomly Selecting the Particles of Isotope 1 Across the Simulation</figcaption>
     </div>
     <div class="Isotope2InstataneousProbabilities">
-        <img src="50 Epochs\IsotopeInstantaneousProbabilities\Isotope2InstantaneousProbabilities.png"
+        <img src="img\IsotopeInstantaneousProbabilities\Isotope2InstantaneousProbabilities.png"
         alt="Instantaneous probabilities for Isotope 2"
         width="100%">
         <figcaption>Figure 13: Probabilities of Randomly Selecting the Particles of Isotope 2 Across the Simulation</figcaption>
     </div>
     <div class="Isotope3InstantaneousProbabilities">
-        <img src="50 Epochs\IsotopeInstantaneousProbabilities\Isotope3InstataneousProbabilities.png"
+        <img src="img\IsotopeInstantaneousProbabilities\Isotope3InstataneousProbabilities.png"
         alt="Instantaneous probabilities for Isotope 3"
         width="100%">
         <figcaption>Figure 14: Probabilities of Randomly Selecting the Particles of Isotope 3 Across the Simulation</figcaption>
@@ -206,7 +206,7 @@
     particles for each isotope across all partition, and the mean probabilities of radomly selecting a particle of one of the 3 isotopes (these
     mean probabilities will be used to generate Bernoulli Random Processes to compare with the realizations shown in Figures 7 - 9).
     <div class="MeanParticleValues">
-    <img src="50 Epochs\meanParticlesValue.jpg"
+    <img src="img\meanParticlesValue.jpg"
     alt="Mean Value of Particles Across Simulation"
     width="30%"
     >
@@ -214,7 +214,7 @@
     </div>
     <p></p>
     <div class="VarianceValues">
-    <img src="50 Epochs\particleVariance.jpg"
+    <img src="img\particleVariance.jpg"
     alt="Variance of the Number of Particles Across Simulation"
     width="30%"
     >
@@ -222,7 +222,7 @@
     </div>
     <p></p>
     <div class="MeanProbabilities">
-    <img src="50 Epochs\MeanProbabilities.jpg"
+    <img src="img\MeanProbabilities.jpg"
     alt="Mean Probabilities of Randomly Drawing Particles of An Isotope Across Simulation"
     width="30%"
     >
@@ -238,21 +238,21 @@
         generated random processes in Figures 15 - 17.
     </p>
     <div class = "BernoulliProcess">
-    <img src="50 Epochs\BernoulliRandomProcesses\Isotope1MeanBernoulli.png"
+    <img src="img\BernoulliRandomProcesses\Isotope1MeanBernoulli.png"
     alt="Bernoulli Random Process Generated from Isotope 1 Mean Probability"
     width="100%"
     >
     <figcaption>Figure 15: Bernoulli Random Process Generated Using the Mean Probability of Isotope 1's Random Process</figcaption>
     </div>
     <div class = "BernoulliProcess">
-    <img src="50 Epochs\BernoulliRandomProcesses\Isotope2MeanBernoulli.png"
+    <img src="img\BernoulliRandomProcesses\Isotope2MeanBernoulli.png"
     alt="Bernoulli Random Process Generated from Isotope 2 Mean Probability"
     width="100%"
     >
     <figcaption>Figure 16: Bernoulli Random Process Generated Using the Mean Probability of Isotope 2's Random Process</figcaption>
     </div>
     <div class = "BernoulliProcess">
-    <img src="50 Epochs\BernoulliRandomProcesses\Isotope3MeanBernoulli.png"
+    <img src="img\BernoulliRandomProcesses\Isotope3MeanBernoulli.png"
     alt="Bernoulli Random Process Generated from Isotope 3 Mean Probability"
     width="100%"
     >
@@ -262,7 +262,7 @@
 <p></p>
 <p>The variance of the three above random processes is shown in the table below:</p>
 <div>
-    <img src="50 Epochs\BernoulliVariance.jpg"
+    <img src="img\BernoulliVariance.jpg"
         alt="Variance in the Bernoulli Random Processes generated from the mean probabilities of the Random Processes in Figures 4-6"
         width="30%"
         >
