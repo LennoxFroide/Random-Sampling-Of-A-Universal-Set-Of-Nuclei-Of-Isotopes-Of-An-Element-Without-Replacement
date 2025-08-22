@@ -64,7 +64,7 @@
     </div>
     <figcaption>Figure 1: Partitions Produced for a Simulation of 50 Sampling Epochs.</figcaption>
     <div class="column">
-    <img src="100 Epochs\IsotopeDistribution100Epochs.jpg" alt="Isotopes per partition." width="1500" height="500">
+    <img src="img\IsotopeDistribution100Epochs.jpg" alt="Isotopes per partition." width="1500" height="500">
     <figcaption>Figure 2: Partitions Produced for a Simulation of 100 Sampling Epochs.</figcaption>
     </div>
 </div>
