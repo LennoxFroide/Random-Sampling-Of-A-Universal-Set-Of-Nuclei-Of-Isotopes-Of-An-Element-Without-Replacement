@@ -83,7 +83,7 @@
     interest for each isotope.
     <h3>Isotope 1</h3>
     <div class = "isotopePath">
-        <img src="50 Epochs\LeftSubtreePaths\Isotope1Path1Epochs50.png" 
+        <img src="img\LeftSubtreePaths\Isotope1Path1Epochs50.png" 
         alt="Left-most path in the left subtree"
         style="width: 100%" >
         <figcaption> Figure 3: Number of Particles of Isotope One Traversing the LeftMost Path in the Left Subtree</figcaption>
