@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="myStyle.css">
 </head>
 <body>
-<h1>SIMULATION RESULTS: 50-EPOCHS VS 100-EPOCHS COMPARISON</h1>
+<h1>RESULTS: SIMULATION OF 50-EPOCHS SAMPLING PROCESS</h1>
 <p>Two simulations were run to study the impact of the number of epochs of sampling on the distribution of
     the particles from each isotope class. The total number of particles in the universal set was assigned to 
     be 1 million and each isotope represented the follow propotions: Hp' 50%, Hp'' 30%, and Hp''' 20%. At each
@@ -52,7 +52,7 @@
     simulations.
 </p>
 
-<h2>(A.) Number Of Partitions Generated</h2>
+<h2>(A.) Number Of Partitions Generated: 50-Epochs vs 100-Epochs Comparison</h2>
 <p>When we double the number of epochs, the number of partitions of the universal set generated also doubles. Of course,
     this is provided that there are enough particles in the universal set to allow every generated partition to have 
     at least 1 particle in it. We generatedd plots of the isotope tree, a binary tree displaying information about the 
